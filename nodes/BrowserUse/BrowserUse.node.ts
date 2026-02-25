@@ -445,26 +445,6 @@ export class BrowserUse implements INodeType {
 					},
 				],
 			},
-			{
-				displayName:
-					'Need an API key? Sign up at <a href="https://cloud.browser-use.com" target="_blank">cloud.browser-use.com</a>',
-				name: 'signupNotice',
-				type: 'notice',
-				default: '',
-				typeOptions: {
-					theme: 'success',
-				},
-			},
-			{
-				displayName:
-					'Documentation: <a href="https://docs.cloud.browser-use.com" target="_blank">docs.cloud.browser-use.com</a>',
-				name: 'docsNotice',
-				type: 'notice',
-				default: '',
-				typeOptions: {
-					theme: 'info',
-				},
-			},
 		],
 	};
 
