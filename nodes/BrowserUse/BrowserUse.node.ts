@@ -7,6 +7,21 @@ import {
 	NodeOperationError,
 } from 'n8n-workflow';
 
+const SUPPORTED_MODELS = [
+	{ name: 'Browser Use 2.0 (Default)', value: 'browser-use-2.0' },
+	{ name: 'Browser Use LLM', value: 'browser-use-llm' },
+	{ name: 'Claude Opus 4.5', value: 'claude-opus-4-5-20251101' },
+	{ name: 'Claude Sonnet 4.5', value: 'claude-sonnet-4-5-20250929' },
+	{ name: 'Claude Sonnet 4.6', value: 'claude-sonnet-4-6' },
+	{ name: 'Gemini 3 Flash Preview', value: 'gemini-3-flash-preview' },
+	{ name: 'Gemini 3 Pro Preview', value: 'gemini-3-pro-preview' },
+	{ name: 'Gemini Flash Latest', value: 'gemini-flash-latest' },
+	{ name: 'Gemini Flash Lite Latest', value: 'gemini-flash-lite-latest' },
+	{ name: 'GPT-4.1', value: 'gpt-4.1' },
+	{ name: 'GPT-4.1 Mini', value: 'gpt-4.1-mini' },
+	{ name: 'O3', value: 'o3' },
+] as const;
+
 export class BrowserUse implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Browser Use',
@@ -271,52 +286,7 @@ export class BrowserUse implements INodeType {
 						displayName: 'AI Model',
 						name: 'llm',
 						type: 'options',
-						options: [
-							{
-								name: 'Browser Use 2.0 (Default)',
-								value: 'browser-use-2.0',
-							},
-							{
-								name: 'Browser Use LLM',
-								value: 'browser-use-llm',
-							},
-							{
-								name: 'Claude Opus 4.5',
-								value: 'claude-opus-4-5-20251101',
-							},
-							{
-								name: 'Claude Sonnet 4.5',
-								value: 'claude-sonnet-4-5-20250929',
-							},
-							{
-								name: 'Gemini 3 Flash Preview',
-								value: 'gemini-3-flash-preview',
-							},
-							{
-								name: 'Gemini 3 Pro Preview',
-								value: 'gemini-3-pro-preview',
-							},
-							{
-								name: 'Gemini Flash Latest',
-								value: 'gemini-flash-latest',
-							},
-							{
-								name: 'Gemini Flash Lite Latest',
-								value: 'gemini-flash-lite-latest',
-							},
-							{
-								name: 'GPT-4.1',
-								value: 'gpt-4.1',
-							},
-							{
-								name: 'GPT-4.1 Mini',
-								value: 'gpt-4.1-mini',
-							},
-							{
-								name: 'O3',
-								value: 'o3',
-							},
-						],
+						options: [...SUPPORTED_MODELS],
 						default: 'browser-use-2.0',
 						description: 'The AI model to use for executing the task',
 					},
@@ -360,52 +330,7 @@ export class BrowserUse implements INodeType {
 						displayName: 'Judge LLM',
 						name: 'judgeLlm',
 						type: 'options',
-						options: [
-							{
-								name: 'Browser Use 2.0 (Default)',
-								value: 'browser-use-2.0',
-							},
-							{
-								name: 'Browser Use LLM',
-								value: 'browser-use-llm',
-							},
-							{
-								name: 'Claude Opus 4.5',
-								value: 'claude-opus-4-5-20251101',
-							},
-							{
-								name: 'Claude Sonnet 4.5',
-								value: 'claude-sonnet-4-5-20250929',
-							},
-							{
-								name: 'Gemini 3 Flash Preview',
-								value: 'gemini-3-flash-preview',
-							},
-							{
-								name: 'Gemini 3 Pro Preview',
-								value: 'gemini-3-pro-preview',
-							},
-							{
-								name: 'Gemini Flash Latest',
-								value: 'gemini-flash-latest',
-							},
-							{
-								name: 'Gemini Flash Lite Latest',
-								value: 'gemini-flash-lite-latest',
-							},
-							{
-								name: 'GPT-4.1',
-								value: 'gpt-4.1',
-							},
-							{
-								name: 'GPT-4.1 Mini',
-								value: 'gpt-4.1-mini',
-							},
-							{
-								name: 'O3',
-								value: 'o3',
-							},
-						],
+						options: [...SUPPORTED_MODELS],
 						default: 'browser-use-2.0',
 						description: 'The AI model to use for judging results',
 					},

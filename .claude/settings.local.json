@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm view:*)",
+      "WebFetch(domain:docs.cloud.browser-use.com)",
+      "Bash(pnpm build:*)"
+    ]
+  }
+}
