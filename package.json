@@ -20,18 +20,15 @@
 		"url": "https://github.com/browser-use/n8n-nodes-browser-use.git"
 	},
 	"engines": {
-		"node": ">=18.10",
-		"pnpm": ">=9.1"
+		"node": ">=18.10"
 	},
-	"packageManager": "pnpm@9.1.0",
 	"main": "index.js",
 	"scripts": {
-		"build": "NODE_NO_WARNINGS=1 tsc && gulp build:icons",
-		"dev": "NODE_NO_WARNINGS=1 tsc --watch",
+		"build": "tsc && gulp build:icons",
+		"dev": "tsc --watch",
 		"format": "prettier nodes credentials --write",
 		"lint": "eslint nodes credentials",
-		"lintfix": "eslint nodes credentials --fix",
-		"prepublishOnly": "pnpm build && pnpm lint"
+		"lintfix": "eslint nodes credentials --fix"
 	},
 	"files": [
 		"dist",
